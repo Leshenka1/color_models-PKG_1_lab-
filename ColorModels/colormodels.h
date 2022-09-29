@@ -2,38 +2,52 @@
 #define COLORMODELS_H
 #include <QVector>
 #include <QDebug>
+#include <math.h>
+#include <QMessageBox>
+
 
 class ColorModels
 {
 
 private:
-    int r;
-    int g;
-    int b;
+
+    double r;
+    double g;
+    double b;
     double c;
     double m;
     double y;
     double k;
-    double h;
-    double s;
-    double v;
+    float h;
+    float s;
+    float v;
+    double h2;
+    double s2;
+    double l2;
+    double x2;
+    double y2;
+    double z2;
     double delt;
+    double v1;
+    double v2;
+    double vH;
 
     QVector <double> rgbVec;
+
 
 
 
 public:
     ColorModels();
 
-    void setR(int _r);
-    void setG(int _r);
-    void setB(int _r);
-    void setRgb(int _r, int _g, int _b);
+    void setR(double _r);
+    void setG(double _r);
+    void setB(double _r);
+    void setRgb(double _r, double _g, double _b);
 
-    int getR();
-    int getG();
-    int getB();
+    double getR();
+    double getG();
+    double getB();
 
 
     void setC(double newC);
@@ -44,26 +58,54 @@ public:
     double getM() const;
     double getY() const;
     double getK() const;
-    void setH(double newH);
-    void setS(double newS);
-    void setV(double newV);
+    void setH(float newH);
+    void setS(float newS);
+    void setV(float newV);
     void setDelt();
-    double getH() const;
-    double getS() const;
-    double getV() const;
+    float getH() const;
+    float getS() const;
+    float getV() const;
     double getDelt() const;
 
     void sortRgbVec();
-    double rgb_h();
-    double rgb_s();
-    double rgb_v();
     void rgb_hsv();
     void hsv_rgb();
+    void hsv_cmyk();
+    void hsv_hsl();
     void rgb_cmyk();
     void cmyk_rgb();
     void cmyk_hsv();
-    void hsv_cmyk();
+    void cmyk_hsl();
+    void rgb_hsl();
+    void hsl_rgb();
+    void hsl_cmyk();
+    void hsl_hsv();
+    double Hue_2_RGB(double v1,double v2,double vH );
+    void rgb_xyz();
+    void cmyk_xyz();
+    void hsv_xyz();
+    void hsl_xyz();
+    void xyz_rgb();
+    void xyz_cmyk();
+    void xyz_hsv();
+    void xyz_hsl();
 
-};
+
+
+
+
+    double getH2() const;
+    void setH2(double newH2);
+    double getS2() const;
+    void setS2(double newS2);
+    double getL2() const;
+    void setL2(double newL2);
+    double getX2() const;
+    void setX2(double newX2);
+    double getY2() const;
+    void setY2(double newY2);
+    double getZ2() const;
+    void setZ2(double newZ2);
+    };
 
 #endif // COLORMODELS_H

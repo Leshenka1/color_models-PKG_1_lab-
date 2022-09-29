@@ -9,6 +9,7 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QColor>
+#include <QSlider>
 #include "colormodels.h"
 
 
@@ -26,6 +27,12 @@ public:
     ~MainWindow();
 
     void changeModel(int index, int code);
+    void changeColor1(int index, QString args);
+    void changeColor2(int index, QString args);
+    void changeColor3(int index, QString args);
+    void changeSliderColor1(int index, QString args);
+    void changeSliderColor2(int index, QString args);
+    void changeSliderColor3(int index, QString args);
 
 
 private:
@@ -63,5 +70,18 @@ private slots:
     void on_lineEdit_1_4_textChanged(const QString &arg1);
     void on_lineEdit_2_4_textChanged(const QString &arg1);
     void on_lineEdit_3_4_textChanged(const QString &arg1);
+    void on_horizontalSlider_1_sliderMoved(int position);
+    void on_horizontalSlider_2_sliderMoved(int position);
+    void on_horizontalSlider_3_sliderMoved(int position);
+    void on_horizontalSlider_4_sliderMoved(int position);
+    void on_horizontalSlider_5_sliderMoved(int position);
+    void on_horizontalSlider_6_sliderMoved(int position);
+    void on_horizontalSlider_7_sliderMoved(int position);
+    void on_horizontalSlider_8_sliderMoved(int position);
+    void on_horizontalSlider_9_sliderMoved(int position);
+    void on_horizontalSlider_1_4_sliderMoved(int position);
+    void on_horizontalSlider_2_4_sliderMoved(int position);
+    void on_horizontalSlider_3_4_sliderMoved(int position);
+
 };
 #endif // MAINWINDOW_H
